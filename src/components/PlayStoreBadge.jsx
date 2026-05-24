@@ -1,9 +1,13 @@
 import badge from "../assets/google-play-badge.png";
 
-export default function PlayStoreBadge({ href = "#", className = "", height = 56 }) {
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.kb.scorex";
+
+export default function PlayStoreBadge({ href = PLAY_STORE_URL, className = "", height = 64 }) {
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label="Get ScoreX on Google Play"
       className={`inline-block transition-transform hover:scale-[1.04] active:scale-95 ${className}`}
     >
