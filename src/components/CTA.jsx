@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Download, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import PlayStoreBadge from "./PlayStoreBadge.jsx";
 
 export default function CTA() {
   return (
@@ -20,10 +21,8 @@ export default function CTA() {
           <p className="relative mt-5 text-slate-300 max-w-xl mx-auto">
             Join organizers and referees using ScoreX to manage matches with confidence.
           </p>
-          <div className="relative mt-8 flex flex-wrap justify-center gap-3">
-            <a href="#" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-brand-gradient text-white font-semibold shadow-glow hover:scale-[1.03] transition-transform">
-              <Download className="w-4 h-4" /> Download
-            </a>
+          <div className="relative mt-8 flex flex-wrap justify-center items-center gap-4">
+            <PlayStoreBadge href="#" height={60} />
             <a href="mailto:hello@scorex.app" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full glass text-white font-semibold hover:bg-white/10 transition-colors">
               <Mail className="w-4 h-4" /> Contact
             </a>

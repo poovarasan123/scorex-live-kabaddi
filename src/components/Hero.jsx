@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
-import { Download, Play, Trophy, Timer, Zap } from "lucide-react";
+import { Trophy, Timer, Zap, Sparkles } from "lucide-react";
 import PhoneMockup from "./PhoneMockup.jsx";
+import PlayStoreBadge from "./PlayStoreBadge.jsx";
 
 export default function Hero() {
   return (
     <section id="top" className="relative pt-28 md:pt-36 pb-20 overflow-hidden">
-      <div className="absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
-      <div className="absolute -top-32 -left-32 w-[520px] h-[520px] radial-glow opacity-60 pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-[520px] h-[520px] radial-glow opacity-40 pointer-events-none" />
+      <div className="absolute inset-0 dot-bg opacity-60 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+      <div className="aurora aurora-1" />
+      <div className="aurora aurora-2" />
+      <div className="aurora aurora-3" />
+      <div className="absolute inset-0 noise pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
@@ -16,29 +19,33 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-xs font-medium text-brand-400">
-            <Zap className="w-3.5 h-3.5" /> Built for Kabaddi
+            <Sparkles className="w-3.5 h-3.5" /> New · Built for Kabaddi
           </span>
 
-          <h1 className="mt-5 font-display font-bold tracking-tight text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
-            Live Kabaddi Scoring <br className="hidden sm:block" />
-            <span className="brand-text">Made Simple</span>
+          <h1 className="mt-5 font-display font-bold tracking-tight text-5xl sm:text-6xl lg:text-7xl leading-[1.02]">
+            Live Kabaddi <br className="hidden sm:block" />
+            Scoring <span className="brand-text italic">reimagined.</span>
           </h1>
 
-          <p className="mt-6 text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed">
+          <p className="mt-6 text-slate-300/90 text-base sm:text-lg max-w-xl leading-relaxed">
             ScoreX helps officials and organizers manage Kabaddi matches with real-time score tracking,
-            substitutions, cards, raid actions and complete match control.
+            substitutions, cards and raid actions — all from your phone.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#cta" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand-gradient text-white font-semibold shadow-glow hover:scale-[1.03] transition-transform">
-              <Download className="w-4 h-4" /> Download App
-            </a>
-            <a href="#how" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full glass text-white font-semibold hover:bg-white/10 transition-colors">
-              <Play className="w-4 h-4" /> Watch Demo
-            </a>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <PlayStoreBadge href="#cta" height={58} />
+            <div className="flex items-center gap-2 text-xs text-slate-400">
+              <div className="flex -space-x-1.5">
+                {[0,1,2,3].map((i) => (
+                  <div key={i} className="w-6 h-6 rounded-full border-2 border-ink-900 bg-gradient-to-br from-brand-500 to-brand-400" />
+                ))}
+              </div>
+              <span>Loved by referees & organizers</span>
+            </div>
           </div>
 
           <div className="mt-10 flex items-center gap-6 text-xs text-slate-400">
+            <div className="flex items-center gap-2"><Zap className="w-4 h-4 text-brand-400" /> Lightning fast</div>
             <div className="flex items-center gap-2"><Trophy className="w-4 h-4 text-brand-400" /> Tournament Ready</div>
             <div className="flex items-center gap-2"><Timer className="w-4 h-4 text-brand-400" /> Real-time Sync</div>
           </div>

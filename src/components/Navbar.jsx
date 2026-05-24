@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import PlayStoreBadge from "./PlayStoreBadge.jsx";
 
 const links = [
   { href: "#features", label: "Features" },
@@ -42,12 +43,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a
-          href="#cta"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-gradient text-white text-sm font-semibold shadow-glow hover:scale-[1.03] transition-transform"
-        >
-          <Download className="w-4 h-4" /> Download
-        </a>
+        <div className="hidden md:block">
+          <PlayStoreBadge href="#cta" height={42} />
+        </div>
 
         <button onClick={() => setOpen((v) => !v)} className="md:hidden p-2 text-white" aria-label="Toggle menu">
           {open ? <X /> : <Menu />}
@@ -68,9 +66,9 @@ export default function Navbar() {
                   {l.label}
                 </a>
               ))}
-              <a href="#cta" onClick={() => setOpen(false)} className="mt-2 px-5 py-3 rounded-full bg-brand-gradient text-white text-sm font-semibold text-center">
-                Download App
-              </a>
+              <div className="mt-2" onClick={() => setOpen(false)}>
+                <PlayStoreBadge href="#cta" height={52} />
+              </div>
             </div>
           </motion.div>
         )}
