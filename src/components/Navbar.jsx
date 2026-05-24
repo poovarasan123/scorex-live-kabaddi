@@ -44,7 +44,7 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <PlayStoreBadge href="#cta" height={42} />
+          <PlayStoreBadge height={48} />
         </div>
 
         <button onClick={() => setOpen((v) => !v)} className="md:hidden p-2 text-white" aria-label="Toggle menu">
@@ -67,7 +67,7 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="mt-2" onClick={() => setOpen(false)}>
-                <PlayStoreBadge href="#cta" height={52} />
+                <PlayStoreBadge height={60} />
               </div>
             </div>
           </motion.div>

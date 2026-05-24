@@ -33,7 +33,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <PlayStoreBadge href="#cta" height={58} />
+            <PlayStoreBadge height={68} />
             <div className="flex items-center gap-2 text-xs text-slate-400">
               <div className="flex -space-x-1.5">
                 {[0,1,2,3].map((i) => (

@@ -22,7 +22,7 @@ export default function CTA() {
             Join organizers and referees using ScoreX to manage matches with confidence.
           </p>
           <div className="relative mt-8 flex flex-wrap justify-center items-center gap-4">
-            <PlayStoreBadge href="#" height={60} />
+            <PlayStoreBadge height={72} />
             <a href="mailto:hello@scorex.app" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full glass text-white font-semibold hover:bg-white/10 transition-colors">
               <Mail className="w-4 h-4" /> Contact
             </a>
